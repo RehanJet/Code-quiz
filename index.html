@@ -2,19 +2,28 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Code Quiz</title>
+    <title>Javascript Code Quiz</title>
     <link rel="stylesheet" href="./Assets/style.css" />
   </head>
   <body>
-    <div id="quiz-container">
-      <h1>Code Quiz</h1>
-      <p>Answer each question to the best of your knowlege within the time limit. For each wrong answer you will be subtracted 10 seconds, Click the start button to begin. Good Luck!</p>
-      <button data-direction="1" id="start-button">Start</button>
+    <div id="questionSet">
+     <div class="start-box" id="Start">
+      <h1>Quiz Instructions</h1>
+      <p class="timer" id="timer">
+        Time -<span id="timer-number">- 60 </span>
+      </div>
+      <form id="quiz-form">
+        <!-- ... -->
+      </form>
+      <!-- ... -->
     </div>
+      <p>Answer each question to the best of your knowlege within the time limit. For each wrong answer you will be subtracted some, Click the start button to begin. Good Luck!</p>
+      <button data-direction="1" id="startButton">Start quiz</button>
+     </div>
 
 
 
-    <div class="text-box question-box" id="Q1">
+     <div class="text-box question-box" id="Q1">
       <h2>Which keyword is used to create a new instance of an object?</h2>
             <button data-direction="1" class ="wrong">This</button>
             <button data-direction="1" class ="right">New</button>
@@ -46,21 +55,30 @@
     </div>
 
 
-    <div class="fin">
-                <!--Your score-->
-                <h2>Finished!</h2>
-                <p>Congratulations!</p>
-                <p>Your score is: <span class="currentScore"></span><!--Needs to have the current score-->___</p>
-                <div>Enter your initials: <input type="text" name="initials"
-                        id="submit"><!--A box to enter your initals and a submit box-->
-                    <button class="submitBtn ">Submit</button>
-                </div>
-            </div>
-        </section>
-    </main>
+    <div class="score-report">
+      <h2>Congratulations!</h2>
+      <p>Final score: <span id="score"></span></p>
+      <label for="initials">Please enter your initials:</label>
+      <input type="text" id="initials" name="initials"/>
+      <button id="submit-score">Submit Score</button>
+    </div>
+    </div>
+    <div class="message"></div>
+    <div class="confirm-score-submit">
+     <h2>Thank you for submitting your score!</h2>
+     <button id="highscores">View Highscores</button>
+    </div>
+    <div class="highscores-page">
+      <h2>Code Quiz Highscores</h2>
+      <ol id="highscoresList"></ol>
+      <button id="back-btn">Back</button>
+    </div>
+
+
+   
 
 
 
-    <script src="/Assets/script.js"></script>
+    <script src="./Assets/script.js"></script>
   </body>
 </html>

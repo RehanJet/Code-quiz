@@ -27,6 +27,7 @@ body {
   #timer {
     font-size: 24px;
     margin-bottom: 20px;
+    display: inline;
   }
   
   #question-container {
@@ -69,4 +70,10 @@ body {
   input[type="submit"]:hover {
     background-color: #555;
   }
+
+  .hidden {
+    display: none;
+  }
+  
+  
   
