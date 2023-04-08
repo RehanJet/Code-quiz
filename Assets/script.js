@@ -17,10 +17,9 @@ const question2 = document.querySelector('.Q2');
 const question3 = document.querySelector('.Q3');
 const question4 = document.querySelector('.Q4');
 
-
-const currentQuestion = {Q1, Q2, Q3, Q4};
-const score = 0;
-const secondsLeft = 60;
+let currentQuestion = 0;
+let score = 0;
+let secondsLeft = 60;
 let timerInterval; null
 
 
@@ -32,10 +31,12 @@ let timerInterval; null
 
 // Function to start the quiz
 function startQuiz() {
+    console.log('Starting Quiz...')
     startButton.style.display = 'none';
+    console.log(questionBoxes[0])
     questionBoxes[currentQuestion].style.display = 'block';
     startTimer();
-    timerEl.style.display = 'block';
+
    
 
   }
@@ -43,9 +44,10 @@ function startQuiz() {
 
 // Function to start the timer
 function startTimer() {
+    console.log('Starting Timer...')
   timerInterval = setInterval(function() {
     secondsLeft--;
-    timerSpanEl.textContent = secondsLeft;
+    timerNumber.textContent = secondsLeft;
     if (secondsLeft <= 0) {
       endQuiz();
     }
@@ -62,6 +64,7 @@ function endQuiz() {
 
 // Function to handle a user's answer to a question
 function answerQuestion(event) {
+    console.log(event);
   event.preventDefault();
 
   const selectedButton = event.target;
